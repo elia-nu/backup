@@ -1,0 +1,32 @@
+import { create } from "zustand";
+const useStore = create((set) => ({
+  isLoggedIn: false,
+  userName: "",
+  passWord: "",
+  isLoaded: false,
+  pickup_location: "9.032876, 38.7514773",
+  drop_location: "9.036876, 38.7534773",
+  pickup_lat: "",
+  pickup_lon: "",
+  drop_lat: "",
+  drop_lon: "",
+
+  calculate_route: false,
+  clear_route: false,
+  updateFormData: {},
+  Login: () => set((state) => ({ isLoggedIn: true })),
+  Logout: () => set((state) => ({ isLoggedIn: false })),
+  setUserName: (data) => set((state) => ({ userName: data })),
+  setPassword: (data) => set((state) => ({ passWord: data })),
+  setIsLoaded: (data) => set((state) => ({ isLoaded: data })),
+  setClaculateRoute: (data) => set((state) => ({ calculate_route: data })),
+  setClearRoute: (data) => set((state) => ({ clear_route: data })),
+  setPickupLocation: (data) => set((state) => ({ pickup_location: data })),
+  setDropLocation: (data) => set((state) => ({ drop_location: data })),
+  setPickUpLat: (data) => set((state) => ({ pickup_lat: data })),
+  setPickUpLon: (data) => set((state) => ({ pickup_lon: data })),
+  setDropLat: (data) => set((state) => ({ drop_lat: data })),
+  setDropLon: (data) => set((state) => ({ drop_lon: data })),
+  setUpdateFormData: (data) => set((state) => ({ updateFormData: data })),
+}));
+export default useStore;
